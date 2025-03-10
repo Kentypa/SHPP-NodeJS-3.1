@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { ButtonClick } from '../enums/button-click';
 
 const app = express();
 
@@ -15,12 +16,8 @@ app.get('/clicks', (req, res) => {
 app.post('/click', (req, res) => {
   const { type } = req.body;
 
-  if (!type) {
-    return res.status(400).json({ error: 'Type is required' });
-  }
-
-  if (type === 'PLUS') clickCounts.plus++;
-  else if (type === 'MINUS') clickCounts.minus++;
+  if (type === ButtonClick.PLUS) clickCounts.plus++;
+  else if (type === ButtonClick.MINUS) clickCounts.minus++;
 
   res.status(200).json(clickCounts);
 });
