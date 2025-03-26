@@ -1,12 +1,12 @@
-type DialogButtonType = 'Yes' | 'No';
+type DialogButtonType = "Yes" | "No";
 
 interface FormButton {
-  type: 'Add' | 'Remove' | 'Buy';
+  type: "Add" | "Remove" | "Buy";
 }
 
 //Завдання 1: створіть тип AnyButtonType, який описує всі варіації кнопок
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-type AnyButtonType = DialogButtonType | FormButton['type']; // тільки без копіпасти літералів, будь ласка
+type AnyButtonType = DialogButtonType | FormButton["type"]; // тільки без копіпасти літералів, будь ласка
 
 // Завдання 2: створіть тип ConfirmationHandlingFormButton
 // тобто підтип формових кнопок, які ще містять поле onConfirm, в якому
